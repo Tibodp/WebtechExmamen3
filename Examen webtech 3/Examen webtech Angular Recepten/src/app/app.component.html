@@ -3,10 +3,10 @@
   <h1>Recepten</h1>
 
   <div class='form-group'>
-    Naam: <br /><input type='text' [(ngModel)]='result_q' /><br />
-    Caloriën: <br /><input type='number' [(ngModel)]='result_q' /><br />
-    Ingridiënten: <br /><input type='text' [(ngModel)]='result_q' /><br />
-    Bereidingstijd in minuten: <br /><input type='number' [(ngModel)]='result_q' /><br />
+    Naam: <br /><input type='text' [(ngModel)]='receptnaam' /><br />
+    Caloriën: <br /><input type='number' [(ngModel)]='receptcalorie' /><br />
+    Ingridiënten: <br /><input type='text' [(ngModel)]='receptingridient' /><br />
+    Bereidingstijd in minuten: <br /><input type='number' [(ngModel)]='recepttijd' /><br />
   </div>
   <br />
   <button type='submit' (click)="onSubmit()">Recept toevoegen</button>

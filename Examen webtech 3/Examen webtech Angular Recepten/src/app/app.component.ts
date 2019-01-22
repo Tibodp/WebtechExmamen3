@@ -17,8 +17,9 @@ export class AppComponent {
   receptcalorie: number;
   receptingridient: string;
   recepttijd: number;
+  uitleg: string;
 
-  constructor(private EersteService: EersteService) { }
+  constructor() { }
 
   onSubmit() {
     this.check = false;
@@ -26,14 +27,14 @@ export class AppComponent {
     for (let i = 0; i < localStorage.length; i++) {
       this.tussen = localStorage.key(i).toString();
       console.log(this.tussen);
-      if (this.tussen == this.result_q) {
-        this.result_a = localStorage.getItem(this.result_q);
+      if (this.tussen == this.receptnaam) {
+        this.result_a = localStorage.getItem(this.receptnaam);
         this.check = true;
       }
     }
     if (!this.check) {
-      this.result_a = this.EersteService.getAnswer();
-      localStorage.setItem(this.result_q, this.result_a);
+      this.uitleg = '{ "Receptnaam" : ' + this.receptnaam + '; "Receptcalorie" : ' + this.receptcalorie + '; "Receptingridient" : ' + this.receptingridient + '; "Bereidingstijd" : ' + this.recepttijd + '}';
+      localStorage.setItem(this.receptnaam, this.uitleg);
     }
 
   }
