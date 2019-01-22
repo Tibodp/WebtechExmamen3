@@ -11,4 +11,9 @@
   <br />
   <button type='submit' (click)="onSubmit()">Recept toevoegen</button>
   <br />
+  <ul>
+    <li *ngFor="let element of receptlijst">
+      {{element.receptnaam}}
+    </li>
+  </ul>
 </div>

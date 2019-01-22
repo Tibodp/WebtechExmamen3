@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EersteService } from './eerste.service';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,6 @@ import { EersteService } from './eerste.service';
 })
 
 export class AppComponent {
-  result_q: string;
   result_a: string;
   check: boolean;
   tussen: string;
@@ -18,6 +18,7 @@ export class AppComponent {
   receptingridient: string;
   recepttijd: number;
   uitleg: string;
+  receptlijst: Array<String> = [];
 
   constructor() { }
 
@@ -35,6 +36,7 @@ export class AppComponent {
     if (!this.check) {
       this.uitleg = '{ "Receptnaam" : ' + this.receptnaam + '; "Receptcalorie" : ' + this.receptcalorie + '; "Receptingridient" : ' + this.receptingridient + '; "Bereidingstijd" : ' + this.recepttijd + '}';
       localStorage.setItem(this.receptnaam, this.uitleg);
+      this.receptlijst.push(this.receptnaam);
     }
 
   }

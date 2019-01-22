@@ -41,7 +41,22 @@ app.post('/add', (req, res) => {
   //if (movie.name == name.value)
     db.collection('movies').insertOne(req.body, (err, result) => {
        if (err) throw err
+      // this.check = false;
+
+      // for (let i = 0; i < localStorage.length; i++) {
+       //  this.tussen = localStorage.key(i).toString();
+        // console.log(this.tussen);
+         //if (this.tussen == this.receptnaam) {
+          // this.result_a = localStorage.getItem(this.receptnaam);
+           //this.check = true;
+         //}
+       //}
+       //if (!this.check) {
+         localStorage.setItem(req.body);
+         //this.receptlijst.push(this.receptnaam);
+       //}
       res.redirect("/list");
+
     })
  // else
       // res.redirect("/list");
