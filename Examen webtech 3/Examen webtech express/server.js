@@ -28,7 +28,24 @@ app.get("/", (req, res) => {
 app.get("/add", (req, res) => {
     res.render("add.ejs", {});
   });
+// Add a movie to the db
+//app.post('/add', (req, res) => {
+    //db.collection('movies').insertOne(req.body, (err, result) => {
+       //if (err) throw err
+       //res.redirect("/list");
+    //})
+  //})
 
+// Add a movie to the db
+app.post('/add', (req, res) => {
+  //if (movie.name == name.value)
+    db.collection('movies').insertOne(req.body, (err, result) => {
+       if (err) throw err
+      res.redirect("/list");
+    })
+ // else
+      // res.redirect("/list");
+  })
 // List all movies
 app.get("/list", (req, res) => {
     db.collection("movies")
@@ -39,13 +56,7 @@ app.get("/list", (req, res) => {
       });
   });
 
-// Add a movie to the db
-app.post('/add', (req, res) => {
-    db.collection('movies').insertOne(req.body, (err, result) => {
-       if (err) throw err
-       res.redirect("/list");
-    })
-  })
+
 // search a movie
 app.post('/search', (req, res) => {
     var query = { name: req.body.name }

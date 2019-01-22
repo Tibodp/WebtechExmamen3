@@ -1,0 +1,14 @@
+<div class='container'>
+
+  <h1>Recepten</h1>
+
+  <div class='form-group'>
+    Naam: <br /><input type='text' [(ngModel)]='result_q' /><br />
+    Caloriën: <br /><input type='number' [(ngModel)]='result_q' /><br />
+    Ingridiënten: <br /><input type='text' [(ngModel)]='result_q' /><br />
+    Bereidingstijd in minuten: <br /><input type='number' [(ngModel)]='result_q' /><br />
+  </div>
+  <br />
+  <button type='submit' (click)="onSubmit()">Recept toevoegen</button>
+  <br />
+</div>
