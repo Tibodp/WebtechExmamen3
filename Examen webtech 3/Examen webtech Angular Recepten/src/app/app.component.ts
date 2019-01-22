@@ -37,6 +37,7 @@ export class AppComponent {
       this.uitleg = '{ "Receptnaam" : ' + this.receptnaam + '; "Receptcalorie" : ' + this.receptcalorie + '; "Receptingridient" : ' + this.receptingridient + '; "Bereidingstijd" : ' + this.recepttijd + '}';
       localStorage.setItem(this.receptnaam, this.uitleg);
       this.receptlijst.push(this.receptnaam);
+      console.log(this.receptlijst)
     }
 
   }
