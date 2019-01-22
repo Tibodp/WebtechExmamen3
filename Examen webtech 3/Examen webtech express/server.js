@@ -52,7 +52,7 @@ app.post('/add', (req, res) => {
          //}
        //}
        //if (!this.check) {
-         localStorage.setItem(req.body);
+         localStorage.setItem('movies');
          //this.receptlijst.push(this.receptnaam);
        //}
       res.redirect("/list");
