@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Inhaalexamen</title>
+  <link rel='stylesheet' href='styles.css'>
+</head>
+<body>
+  <h1>Alle inhaalexamens</h1>
+
+  <ul class='movie'>
+  <% for(var i=0; i < movies.length; i++) {%>
+    <li class='movie'>
+      <span><b>Aanvrager : </b><%= movies[i].name %></span><br /><br />
+      <span><b>Vak :  </b><%= movies[i].description %></span><br /><br />
+      <span><b>Reden : </b><%= movies[i].acteur %></span>
+    </li>
+  <% } %>
+  </ul>
+<br />
+
+<a href='/add'>Aanvraag inhaalexamen</a>&nbsp;&nbsp;<br />
+<a href='/search'>Zoek examen</a>
+
+</body>
+</html>
